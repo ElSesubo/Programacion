@@ -1,0 +1,7 @@
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO2\bin\Debug\EJERCICIO2.exe.config
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO2\bin\Debug\EJERCICIO2.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO2\bin\Debug\EJERCICIO2.pdb
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO2\obj\Debug\EJERCICIO2.csproj.AssemblyReference.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO2\obj\Debug\EJERCICIO2.csproj.CoreCompileInputs.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO2\obj\Debug\EJERCICIO2.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO2\obj\Debug\EJERCICIO2.pdb

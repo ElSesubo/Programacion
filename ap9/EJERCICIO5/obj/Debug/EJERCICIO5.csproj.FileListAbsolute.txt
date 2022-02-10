@@ -1,0 +1,7 @@
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO5\bin\Debug\EJERCICIO5.exe.config
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO5\bin\Debug\EJERCICIO5.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO5\bin\Debug\EJERCICIO5.pdb
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO5\obj\Debug\EJERCICIO5.csproj.AssemblyReference.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO5\obj\Debug\EJERCICIO5.csproj.CoreCompileInputs.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO5\obj\Debug\EJERCICIO5.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\ap9\EJERCICIO5\obj\Debug\EJERCICIO5.pdb
