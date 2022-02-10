@@ -1,0 +1,7 @@
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO6\bin\Debug\EJERCICIO6.exe.config
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO6\bin\Debug\EJERCICIO6.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO6\bin\Debug\EJERCICIO6.pdb
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO6\obj\Debug\EJERCICIO6.csproj.AssemblyReference.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO6\obj\Debug\EJERCICIO6.csproj.CoreCompileInputs.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO6\obj\Debug\EJERCICIO6.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO6\obj\Debug\EJERCICIO6.pdb

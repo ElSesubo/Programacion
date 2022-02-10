@@ -1,0 +1,14 @@
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\bin\Debug\EJERCICIO1.exe.config
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\bin\Debug\EJERCICIO1.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\bin\Debug\EJERCICIO1.pdb
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.csproj.AssemblyReference.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.csproj.CoreCompileInputs.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.pdb
+C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\bin\Debug\EJERCICIO1.exe.config
+C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\bin\Debug\EJERCICIO1.exe
+C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\bin\Debug\EJERCICIO1.pdb
+C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.csproj.AssemblyReference.cache
+C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.exe
+C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\POO\AP11\EJERCICIO1\obj\Debug\EJERCICIO1.pdb
