@@ -26,7 +26,7 @@ namespace EJERCICIO2
                 preciofunciones[i] = double.Parse(Console.ReadLine());
             }
 
-            Teatro principal = new Teatro(nomTeatro, dirTea, nomfunciones, prefunciones);
+            Teatro principal = new Teatro(nombreTea, dirTea, nomfunciones, prefunciones);
 
             Console.WriteLine("Nombre del teatro : {0} y Dirección {1}", principal.getNombre(), principal.gerDireccion());
 
