@@ -8,9 +8,22 @@ namespace EXAMENDEPRUEBA
 {
     class Program
     {
+        static Television TelevisionBarata(List<Electrodomestico> electros)
+        {
+            Television salaverga = new Television();
+            foreach (var item in electros)
+            {
+                if(item.PrecioFinal < salaverga.PrecioFinal)
+                {
+                    salaverga;
+                }
+            }
+            return salaverga;
+        }
+
         static void Main(string[] args)
         {
-            List<Electrodomestico> electrodomesticos = new List<Electrodomestico>();
+            List<Electrodomestico> electrodomesticos = new List<Television>();
 
             Comprador juan = new Comprador();
 
@@ -25,7 +38,7 @@ namespace EXAMENDEPRUEBA
 
             foreach (var item in electrodomesticos)
             {
-                Console.WriteLine("Nombre del comprador : {0}, Precio final : {1}", juan.NomComprador, xaomi.PrecioFinal(40, false));
+                Console.WriteLine("Nombre del comprador : {0}, Precio final : {1}", juan.NomComprador, xaomi.PrecioFinal);
             }
 
 

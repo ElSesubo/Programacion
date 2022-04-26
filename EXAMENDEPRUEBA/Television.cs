@@ -47,19 +47,17 @@ namespace EXAMENDEPRUEBA
             sintonizadorTDT = sin;
         }
 
-        public double PrecioFinal()
+        public override double PrecioFinal()
         {
-            base.PrecioFinal;
-            double precioFinal = 0;
-            if (res > 40)
+            if (pulgadas > 40)
             {
-                precioFinal = precioFinal*1.30;
+                base.preciobase *= 0.3;
             }
-            if (sin == true)
+            if (sintonizador == true)
             {
-                precioFinal = precioFinal * 50;
+                base.preciobase += 50;
             }
-            return precioFinal;
+            return base.preciobase;
         }
 
         public bool ComprobarSintonizador(string sin)

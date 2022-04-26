@@ -60,9 +60,9 @@ namespace EXAMENDEPRUEBA
             return color;
         }
 
-        public double PrecioFinal(double peso, char consumE)
+        public virtual double PrecioFinal()
         {
-            if(consumE == 'A' || consumE == 'B')
+            if(consumoEner == 'A' || consumoEner == 'B')
             {
                 preciobase = preciobase + 100;
             }
