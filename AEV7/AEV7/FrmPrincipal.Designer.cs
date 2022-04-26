@@ -30,7 +30,6 @@ namespace AEV7
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtNIF = new System.Windows.Forms.TextBox();
             this.lblReloj = new System.Windows.Forms.Label();
             this.btnEntrada = new System.Windows.Forms.Button();
             this.btnSalida = new System.Windows.Forms.Button();
@@ -42,20 +41,10 @@ namespace AEV7
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtgvPresencia = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtNIF = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPresencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtNIF
-            // 
-            this.txtNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIF.Location = new System.Drawing.Point(39, 27);
-            this.txtNIF.MaxLength = 10;
-            this.txtNIF.Multiline = true;
-            this.txtNIF.Name = "txtNIF";
-            this.txtNIF.Size = new System.Drawing.Size(526, 104);
-            this.txtNIF.TabIndex = 0;
-            this.txtNIF.Tag = "";
             // 
             // lblReloj
             // 
@@ -174,6 +163,16 @@ namespace AEV7
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // txtNIF
+            // 
+            this.txtNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIF.Location = new System.Drawing.Point(39, 16);
+            this.txtNIF.Mask = "########?";
+            this.txtNIF.Name = "txtNIF";
+            this.txtNIF.Size = new System.Drawing.Size(526, 116);
+            this.txtNIF.TabIndex = 12;
+            this.txtNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +180,7 @@ namespace AEV7
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(890, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.txtNIF);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtgvPresencia);
             this.Controls.Add(this.lblFecha);
@@ -191,7 +191,6 @@ namespace AEV7
             this.Controls.Add(this.btnSalida);
             this.Controls.Add(this.btnEntrada);
             this.Controls.Add(this.lblReloj);
-            this.Controls.Add(this.txtNIF);
             this.Name = "FrmPrincipal";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -203,8 +202,6 @@ namespace AEV7
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNIF;
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Button btnEntrada;
         private System.Windows.Forms.Button btnSalida;
@@ -216,6 +213,7 @@ namespace AEV7
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DataGridView dtgvPresencia;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox txtNIF;
     }
 }
 

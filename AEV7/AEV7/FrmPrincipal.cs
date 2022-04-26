@@ -15,6 +15,7 @@ namespace AEV7
         ConexionBD bdatos = new ConexionBD();
         FrmAdministrador formAdmin;
         FrmPermanencia formPerm;
+        Contrasenya formContra;
 
         public FrmPrincipal()
         {
@@ -45,14 +46,21 @@ namespace AEV7
                     string fecha = DateTime.Now.ToString("yyyy/MM/dd");
                     Registro re = new Registro();
                     Empleado emp = new Empleado();
-                    
-                    if(emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text))
+                    if (emp.CheckNIF(txtNIF.Text))
                     {
-                        resultado = re.ficharEntrada(bdatos.Conexion, txtNIF.Text, fecha, hora);
-                        MessageBox.Show("Fichaje de entrada realizado");
+                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text))
+                        {
+                            resultado = re.ficharEntrada(bdatos.Conexion, txtNIF.Text, fecha, hora);
+                            MessageBox.Show("Fichaje de entrada realizado");
+                        }
+                        else
+                        {
+                            MessageBox.Show("El NIF es erroneo");
+                        }
                     }
-                    else {
-                        MessageBox.Show("El NIF es erroneo");
+                    else
+                    {
+                        MessageBox.Show("La letra del NIF es incorrecta");
                     }
                 }
                 else
@@ -134,6 +142,15 @@ namespace AEV7
 
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
+            DialogResult respuesta = formPerm.ShowDialog();
+            if (respuesta == DialogResult.OK)
+            {
+                dtgvPresencia.DataSource = formPerm.;
+            }
+            if (respuesta == DialogResult.Cancel)
+            {
+                MessageBox.Show("Has cancelado el proceso");
+            }
             formPerm.ShowDialog();
         }
 

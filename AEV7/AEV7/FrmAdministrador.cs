@@ -55,7 +55,7 @@ namespace AEV7
         {
             bool ok = true;
 
-            if (txtNIF.TextLength > 10 || txtNIF.TextLength < 10)
+            if (txtNIF.TextLength > 9 || txtNIF.TextLength < 9)
             {
                 ok = false;
                 errorProvider1.SetError(txtNIF, "Formato del NIF mal introducido");
@@ -68,31 +68,31 @@ namespace AEV7
             if (txtNombre.Text == "")
             {
                 ok = false;
-                errorProvider1.SetError(txtNombre, "Rellenar campo");
+                errorProvider2.SetError(txtNombre, "Rellenar campo");
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider2.Clear();
             }
 
             if (txtApellidos.Text == "")
             {
                 ok = false;
-                errorProvider1.SetError(txtApellidos, "Rellenar campo");
+                errorProvider3.SetError(txtApellidos, "Rellenar campo");
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider3.Clear();
             }
 
             if (txtContrasenya.Text == "")
             {
                 ok = false;
-                errorProvider1.SetError(txtContrasenya, "Rellenar campo");
+                errorProvider4.SetError(txtContrasenya, "Rellenar campo");
             }
             else
             {
-                errorProvider1.Clear();
+                errorProvider4.Clear();
             }
             return ok;
         }
@@ -124,14 +124,20 @@ namespace AEV7
                         emp.Administrador = cbAdministrado.Checked;
                         emp.Password = txtContrasenya.Text;
 
-                        if (emp.ComprobarNIF(bdatos.Conexion, emp.Nif))
-                        {
-                            MessageBox.Show("El empleado ya existe");
+                        if (emp.CheckNIF(txtNIF.Text)){
+                            if (emp.ComprobarNIF(bdatos.Conexion, emp.Nif))
+                            {
+                                MessageBox.Show("El empleado ya existe");
+                            }
+                            else
+                            {
+                                resultado = emp.AgregarEmpleado(bdatos.Conexion, emp);
+                                MessageBox.Show("Se ha agregado el empleado exitosamente");
+                            }
                         }
                         else
                         {
-                            resultado = emp.AgregarEmpleado(bdatos.Conexion, emp);
-                            MessageBox.Show("Se ha agregado el empleado exitosamente");
+                            MessageBox.Show("La letra del NIF es erronea");
                         }
 
                         if (resultado > 0)

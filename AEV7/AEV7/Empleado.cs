@@ -103,5 +103,34 @@ namespace AEV7
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
+
+        public bool CheckNIF(string dni)
+        {
+            if (dni.Length != 9)
+            {
+                return false;
+            }
+
+            string dniNumbers = dni.Substring(0, dni.Length - 1);
+            string dniLeter = dni.Substring(dni.Length - 1, 1);
+
+            var numbersValid = int.TryParse(dniNumbers, out int dniInteger);
+            if (!numbersValid)
+            {
+                return false;
+            }
+            if (CalculateNIF(dniInteger) != dniLeter)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public string CalculateNIF(int dniNumbers)
+        {
+            string[] control = { "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E" };
+            var mod = dniNumbers % 23;
+            return control[mod];
+        }
     }
 }
