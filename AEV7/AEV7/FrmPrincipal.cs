@@ -14,14 +14,14 @@ namespace AEV7
     {
         ConexionBD bdatos = new ConexionBD();
         FrmAdministrador formAdmin;
-        FrmPermanencia formPerm;
+        FrmPermanencia formPer;
         Contrasenya formContra;
 
         public FrmPrincipal()
         {
             InitializeComponent();
             formAdmin = new FrmAdministrador();
-            formPerm = new FrmPermanencia();
+            formPer = new FrmPermanencia();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -142,16 +142,7 @@ namespace AEV7
 
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = formPerm.ShowDialog();
-            if (respuesta == DialogResult.OK)
-            {
-                dtgvPresencia.DataSource = formPerm.;
-            }
-            if (respuesta == DialogResult.Cancel)
-            {
-                MessageBox.Show("Has cancelado el proceso");
-            }
-            formPerm.ShowDialog();
+            formPer.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
