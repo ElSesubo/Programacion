@@ -22,6 +22,10 @@ namespace AEV7
         {
             CargaListaEmpleados();
             CargaListaFichajes();
+            if (cbAdministrado.Checked == false)
+            {
+                txtContrasenya.Enabled = false;
+            }
         }
 
         private void CargaListaEmpleados()
@@ -210,7 +214,7 @@ namespace AEV7
 
         private void cbAdministrado_CheckedChanged(object sender, EventArgs e)
         {
-
+            txtContrasenya.Enabled = true;
         }
     }
 }

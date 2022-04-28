@@ -1,0 +1,62 @@
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\AEV7.exe.config
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\AEV7.exe
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\AEV7.pdb
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\MySql.Data.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\MySql.Web.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\Google.Protobuf.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\ZstdNet.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\System.Memory.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\System.Buffers.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\MySql.Data.xml
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\bin\Debug\MySql.Web.xml
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.csproj.AssemblyReference.cache
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.csproj.SuggestedBindingRedirects.cache
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.exe.config
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.Properties.Resources.resources
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.csproj.GenerateResource.cache
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.csproj.CoreCompileInputs.cache
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.csproj.CopyComplete
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.exe
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.pdb
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.Form1.resources
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\AEV7.exe.config
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\AEV7.exe
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\AEV7.pdb
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\MySql.Data.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\MySql.Web.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\Google.Protobuf.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\ZstdNet.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\System.Memory.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\System.Buffers.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\MySql.Data.xml
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\bin\Debug\MySql.Web.xml
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.csproj.AssemblyReference.cache
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.csproj.SuggestedBindingRedirects.cache
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.exe.config
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.Form1.resources
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.Properties.Resources.resources
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.csproj.GenerateResource.cache
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.csproj.CoreCompileInputs.cache
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.csproj.CopyComplete
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.exe
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.pdb
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.Form2.resources
+C:\Users\Akayu\Desktop\Clase\OneDrive - Florida Centre de Formació Coop.V\Grado Superior\Programacion\CSharp\Ejercicios\AEV7\obj\Debug\AEV7.Form3.resources
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.Form2.resources
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.permanencia.resources
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.PanelAdmi.resources
+C:\Users\Haitian Ji\Documents\programación\3eva\c#\AEV7\obj\Debug\AEV7.login.resources

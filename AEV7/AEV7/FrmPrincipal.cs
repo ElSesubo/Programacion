@@ -13,14 +13,14 @@ namespace AEV7
     public partial class FrmPrincipal : Form
     {
         ConexionBD bdatos = new ConexionBD();
-        FrmAdministrador formAdmin;
+        FrmContrasenya formContra;
         FrmPermanencia formPer;
-        Contrasenya formContra;
+        
 
         public FrmPrincipal()
         {
             InitializeComponent();
-            formAdmin = new FrmAdministrador();
+            formContra = new FrmContrasenya();
             formPer = new FrmPermanencia();
         }
 
@@ -43,14 +43,13 @@ namespace AEV7
                 if (bdatos.AbrirConexion())
                 {
                     string hora = DateTime.Now.ToString("HH:mm:ss");
-                    string fecha = DateTime.Now.ToString("yyyy/MM/dd");
                     Registro re = new Registro();
                     Empleado emp = new Empleado();
                     if (emp.CheckNIF(txtNIF.Text))
                     {
                         if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text))
                         {
-                            resultado = re.ficharEntrada(bdatos.Conexion, txtNIF.Text, fecha, hora);
+                            resultado = re.ficharEntrada(bdatos.Conexion, txtNIF.Text, hora);
                             MessageBox.Show("Fichaje de entrada realizado");
                         }
                         else
@@ -123,7 +122,7 @@ namespace AEV7
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-            formAdmin.ShowDialog();
+            formContra.ShowDialog();
         }
 
         private void btnPresencia_Click(object sender, EventArgs e)

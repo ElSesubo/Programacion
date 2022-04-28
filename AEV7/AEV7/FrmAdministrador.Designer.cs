@@ -131,6 +131,7 @@ namespace AEV7
             // 
             // txtContrasenya
             // 
+            this.txtContrasenya.Enabled = false;
             this.txtContrasenya.Location = new System.Drawing.Point(78, 203);
             this.txtContrasenya.Name = "txtContrasenya";
             this.txtContrasenya.Size = new System.Drawing.Size(158, 20);
@@ -268,6 +269,7 @@ namespace AEV7
             this.Controls.Add(this.dtgvFichajes);
             this.Controls.Add(this.dtgvEmpleados);
             this.Name = "FrmAdministrador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdministrador";
             this.Load += new System.EventHandler(this.FrmAdministrador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleados)).EndInit();

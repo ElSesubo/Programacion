@@ -128,6 +128,7 @@ namespace AEV7
             this.Controls.Add(this.dtgvPermanencia);
             this.Controls.Add(this.dtpInicio);
             this.Name = "FrmPermanencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPermanencia";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPermanencia)).EndInit();
             this.ResumeLayout(false);
