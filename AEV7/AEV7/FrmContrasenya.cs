@@ -50,6 +50,8 @@ namespace AEV7
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            txtNIF.Clear();
+            txtContrasenya.Clear();
             this.Close();
         }
     }

@@ -68,7 +68,6 @@ C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV
 C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.csproj.CopyComplete
 C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.exe
 C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.pdb
-C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.Contrasenya.resources
 C:\Users\gabri\Documents\Programacion-POO\AEV7\AEV7\bin\Debug\AEV7.exe.config
 C:\Users\gabri\Documents\Programacion-POO\AEV7\AEV7\bin\Debug\AEV7.exe
 C:\Users\gabri\Documents\Programacion-POO\AEV7\AEV7\bin\Debug\AEV7.pdb
@@ -105,3 +104,4 @@ C:\Users\gabri\Documents\Programacion-POO\AEV7\AEV7\obj\Debug\AEV7.csproj.CopyCo
 C:\Users\gabri\Documents\Programacion-POO\AEV7\AEV7\obj\Debug\AEV7.exe
 C:\Users\gabri\Documents\Programacion-POO\AEV7\AEV7\obj\Debug\AEV7.pdb
 C:\Users\gabri\Documents\Programacion-POO\AEV7\AEV7\obj\Debug\AEV7.FrmContrasenya.resources
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.FrmContrasenya.resources

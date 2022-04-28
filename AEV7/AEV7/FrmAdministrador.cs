@@ -72,32 +72,23 @@ namespace AEV7
             if (txtNombre.Text == "")
             {
                 ok = false;
-                errorProvider2.SetError(txtNombre, "Rellenar campo");
+                errorProvider1.SetError(txtNombre, "Rellenar campo");
             }
             else
             {
-                errorProvider2.Clear();
+                errorProvider1.Clear();
             }
 
             if (txtApellidos.Text == "")
             {
                 ok = false;
-                errorProvider3.SetError(txtApellidos, "Rellenar campo");
+                errorProvider1.SetError(txtApellidos, "Rellenar campo");
             }
             else
             {
-                errorProvider3.Clear();
+                errorProvider1.Clear();
             }
 
-            if (txtContrasenya.Text == "")
-            {
-                ok = false;
-                errorProvider4.SetError(txtContrasenya, "Rellenar campo");
-            }
-            else
-            {
-                errorProvider4.Clear();
-            }
             return ok;
         }
 
@@ -135,7 +126,7 @@ namespace AEV7
                             }
                             else
                             {
-                                resultado = emp.AgregarEmpleado(bdatos.Conexion, emp);
+                                resultado = Empleado.AgregarEmpleado(bdatos.Conexion, emp);
                                 MessageBox.Show("Se ha agregado el empleado exitosamente");
                             }
                         }
@@ -215,6 +206,11 @@ namespace AEV7
         private void cbAdministrado_CheckedChanged(object sender, EventArgs e)
         {
             txtContrasenya.Enabled = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

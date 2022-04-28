@@ -40,10 +40,8 @@ namespace AEV7
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtgvPresencia = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNIF = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPresencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReloj
@@ -151,18 +149,6 @@ namespace AEV7
             this.dtgvPresencia.Size = new System.Drawing.Size(526, 264);
             this.dtgvPresencia.TabIndex = 10;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::AEV7.Properties.Resources._4e3ad7aee69e5da6de7e91b63e3952de_apagar_el_icono_de_trazo;
-            this.pictureBox1.Location = new System.Drawing.Point(824, 505);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // txtNIF
             // 
             this.txtNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,10 +164,9 @@ namespace AEV7
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(890, 564);
+            this.ClientSize = new System.Drawing.Size(890, 516);
             this.ControlBox = false;
             this.Controls.Add(this.txtNIF);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtgvPresencia);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnVolver);
@@ -196,7 +181,6 @@ namespace AEV7
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPresencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +197,6 @@ namespace AEV7
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DataGridView dtgvPresencia;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MaskedTextBox txtNIF;
     }
 }

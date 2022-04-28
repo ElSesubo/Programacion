@@ -37,20 +37,20 @@ namespace AEV7
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
             try
             {
                 if (bdatos.AbrirConexion())
                 {
-                    string hora = DateTime.Now.ToString("HH:mm:ss");
                     Registro re = new Registro();
                     Empleado emp = new Empleado();
                     if (emp.CheckNIF(txtNIF.Text))
                     {
-                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text))
+                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper()))
                         {
-                            resultado = re.ficharEntrada(bdatos.Conexion, txtNIF.Text, hora);
-                            MessageBox.Show("Fichaje de entrada realizado");
+                            if(re.ficharEntrada(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1)
+                            {
+                                MessageBox.Show("Fichaje de entrada realizado");
+                            }
                         }
                         else
                         {
@@ -79,19 +79,18 @@ namespace AEV7
 
         private void btnSalida_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
             try
             {
                 if (bdatos.AbrirConexion())
                 {
                     Registro re = new Registro();
-                    re.Finalizado = true;
-                    string hora = DateTime.Now.ToString("HH:mm:ss");
                     Empleado emp = new Empleado();
-                    if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text))
+                    if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper()))
                     {
-                        resultado = re.ficharSalida(bdatos.Conexion, hora, txtNIF.Text);
-                        MessageBox.Show("Fichaje de entrada realizado");
+                        if(re.ficharSalida(bdatos.Conexion,txtNIF.Text.ToUpper()) == 1)
+                        {
+                            MessageBox.Show("Fichaje de salida realizado");
+                        }
                     }
                     else
                     {
@@ -142,11 +141,6 @@ namespace AEV7
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
             formPer.ShowDialog();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

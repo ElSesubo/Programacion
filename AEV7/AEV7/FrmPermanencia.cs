@@ -29,6 +29,7 @@ namespace AEV7
             {
                 if(dtpInicio.Value <= dtpFinal.Value)
                 {
+                    dtgvPermanencia.Columns.Clear();
                     dtgvPermanencia.DataSource = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
                     bdatos.CerrarConexion();
                 }

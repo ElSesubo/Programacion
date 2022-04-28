@@ -52,6 +52,8 @@ namespace AEV7
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFichajes)).BeginInit();
             this.gbGestion.SuspendLayout();
@@ -59,6 +61,7 @@ namespace AEV7
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgvEmpleados
@@ -86,6 +89,7 @@ namespace AEV7
             this.gbGestion.Controls.Add(this.btnAgregar);
             this.gbGestion.Controls.Add(this.lblContrasenya);
             this.gbGestion.Controls.Add(this.txtContrasenya);
+            this.gbGestion.Controls.Add(this.btnCerrar);
             this.gbGestion.Controls.Add(this.cbAdministrado);
             this.gbGestion.Controls.Add(this.lblApellidos);
             this.gbGestion.Controls.Add(this.txtApellidos);
@@ -96,7 +100,7 @@ namespace AEV7
             this.gbGestion.Controls.Add(this.lblGestion);
             this.gbGestion.Location = new System.Drawing.Point(609, 41);
             this.gbGestion.Name = "gbGestion";
-            this.gbGestion.Size = new System.Drawing.Size(275, 298);
+            this.gbGestion.Size = new System.Drawing.Size(275, 327);
             this.gbGestion.TabIndex = 2;
             this.gbGestion.TabStop = false;
             // 
@@ -210,7 +214,7 @@ namespace AEV7
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(809, 456);
+            this.btnCerrar.Location = new System.Drawing.Point(103, 287);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 12;
@@ -256,15 +260,38 @@ namespace AEV7
             // 
             this.errorProvider4.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::AEV7.Properties.Resources._4e3ad7aee69e5da6de7e91b63e3952de_apagar_el_icono_de_trazo;
+            this.pictureBox1.Location = new System.Drawing.Point(848, 444);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(694, 450);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 24);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Cerrar Programa";
+            // 
             // FrmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 501);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblEmpleado);
-            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.gbGestion);
             this.Controls.Add(this.dtgvFichajes);
             this.Controls.Add(this.dtgvEmpleados);
@@ -280,6 +307,7 @@ namespace AEV7
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,5 +337,7 @@ namespace AEV7
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

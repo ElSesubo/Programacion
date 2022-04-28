@@ -11,18 +11,18 @@ namespace AEV7
         private int id;
         private string nif;
         private DateTime fecha;
-        private string fichajeEntrada;
-        private string fichajeSalida;
+        private TimeSpan fichajeEntrada;
+        private TimeSpan fichajeSalida;
         private bool finalizado;
 
         public int Id { get { return id; } set { id = value;} }
         public string Nif { get { return nif; } set { nif = value; } }
         public DateTime Fecha { get { return fecha; } set { fecha = value; } }
-        public string FichajeEntrada { get { return fichajeEntrada; } set { fichajeEntrada = value; } }
-        public string FichajeSalida { get { return fichajeSalida; } set { fichajeSalida = value; } }
+        public TimeSpan FichajeEntrada { get { return fichajeEntrada; } set { fichajeEntrada = value; } }
+        public TimeSpan FichajeSalida { get { return fichajeSalida; } set { fichajeSalida = value; } }
         public bool Finalizado { get { return finalizado; } set { finalizado = value; } }
 
-        public Registro(int i, string n, DateTime f, string fEntrada, string fSalida, bool fin)
+        public Registro(int i, string n, DateTime f, TimeSpan fEntrada, TimeSpan fSalida, bool fin)
         {
             id = i;
             nif = n;
@@ -37,24 +37,27 @@ namespace AEV7
 
         }
 
-        public int ficharEntrada(MySqlConnection conexion, string nif, string hora)
+        public int ficharEntrada(MySqlConnection conexion, string nif)
         {
             int retorno;
-            string consulta = string.Format("INSERT INTO fichaje (NIF,fecha,fichajeEntrada) VALUES('{0}',@fecha,'{1}')", nif, hora);
+            string consulta = string.Format("INSERT INTO fichaje (NIF,fecha,fichajeEntrada,fichajeSalida) VALUES('{0}',@fecha,@h_en,@h_sal)", nif);
 
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
             comando.Parameters.AddWithValue("fecha", DateTime.Now.ToString("yyyyMMdd"));
+            comando.Parameters.AddWithValue("h_en", DateTime.Now.ToString("HHmmss"));
+            comando.Parameters.AddWithValue("h_sal", DateTime.MinValue.ToString("HHmmss"));
 
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
 
-        public int ficharSalida(MySqlConnection conexion, string hora, string nif)
+        public int ficharSalida(MySqlConnection conexion, string nif)
         {
             int retorno;
-            string consulta = string.Format("UPDATE fichaje SET fichajeSalida='{0}',finalizado=true WHERE nif='{1}' AND finalizado=0", hora, nif);
+            string consulta = string.Format("UPDATE fichaje SET fichajeSalida=@h_sal,finalizado=1 WHERE nif='{0}' AND finalizado=0", nif);
 
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("h_sal", DateTime.Now.ToString("HHmmss"));
 
             retorno = comando.ExecuteNonQuery();
             return retorno;
@@ -73,7 +76,7 @@ namespace AEV7
                 {
                     while (reader.Read())
                     {
-                        Registro user = new Registro(reader.GetInt32(0),reader.GetString(1),reader.GetDateTime(2),reader.GetString(3),reader.GetString(4),reader.GetBoolean(5));
+                        Registro user = new Registro(reader.GetInt32(0),reader.GetString(1),reader.GetDateTime(2),reader.GetTimeSpan(3),reader.GetTimeSpan(4),reader.GetBoolean(5));
                         lista.Add(user);
                     }
                 }
@@ -96,7 +99,7 @@ namespace AEV7
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                fichajes.Add(new Registro(reader.GetInt32(0),reader.GetString(1),reader.GetDateTime(2), reader.GetString(3), reader.GetString(4),reader.GetBoolean(5)));
+                fichajes.Add(new Registro(reader.GetInt32(0),reader.GetString(1),reader.GetDateTime(2), reader.GetTimeSpan(3), reader.GetTimeSpan(4),reader.GetBoolean(5)));
             }
             reader.Close();
             return fichajes;

@@ -12,17 +12,17 @@ namespace AEV7
         private string nif;
         private string nombre;
         private string apellido;
-        private bool administrador;
+        private Boolean administrador;
         private string password;
 
         public string Nif { get { return nif; } set { nif = value; } }
         public string Nombre { get { return nombre; } set { nombre = value; } }
         public string Apellido { get { return apellido; } set { apellido = value; } }
-        public bool Administrador { get { return administrador; } set { administrador = value; } }
+        public Boolean Administrador { get { return administrador; } set { administrador = value; } }
         public string Password { get { return password; } set { password = value; } }
 
 
-        public Empleado(string n, string nom, string ape, bool admin, string pass)
+        public Empleado(string n, string nom, string ape, Boolean admin, string pass)
         {
             nif = n;
             nombre = nom;
@@ -73,16 +73,24 @@ namespace AEV7
             return lista;
         }
 
-        public int AgregarEmpleado(MySqlConnection conexion, Empleado emp)
+        static public int AgregarEmpleado(MySqlConnection conexion, Empleado emp)
         {
             int retorno;
+            string consulta;
 
-            string consulta = string.Format("INSERT INTO empleado VALUES ('{0}','{1}','{2}','{3}','{4}')", emp.nif.ToUpper(), emp.nombre, emp.apellido, emp.administrador, emp.password);
+            if (emp.Administrador)
+            {
+                consulta = string.Format("INSERT INTO empleado VALUES ('{0}','{1}','{2}','{3}','{4}')", emp.nif.ToUpper(), emp.nombre, emp.apellido, 1, emp.password);
+            }
+            else
+            {
+                consulta = string.Format("INSERT INTO empleado VALUES ('{0}','{1}','{2}','{3}','{4}')", emp.nif.ToUpper(), emp.nombre, emp.apellido, 0, emp.password);
+            }
 
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
-        }
+        } 
 
         public int ActualizarEmpleado(MySqlConnection conexion, Empleado emp)
         {
