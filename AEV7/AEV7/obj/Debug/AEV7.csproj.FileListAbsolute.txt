@@ -33,3 +33,39 @@ C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\AEV7\AEV7\o
 C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\AEV7\AEV7\obj\Debug\AEV7.FrmAdministrador.resources
 C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\AEV7\AEV7\obj\Debug\AEV7.FrmPrincipal.resources
 C:\Users\gabri\Desktop\DAM\Programación\Ejercicios_Programación\C#\AEV7\AEV7\obj\Debug\AEV7.FrmPermanencia.resources
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\AEV7.exe.config
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\AEV7.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\AEV7.pdb
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\Google.Protobuf.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\MySql.Data.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Buffers.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Memory.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\ZstdNet.dll
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\Google.Protobuf.pdb
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\Google.Protobuf.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\MySql.Data.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Buffers.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Memory.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.csproj.AssemblyReference.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.FrmAdministrador.resources
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.FrmPermanencia.resources
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.FrmPrincipal.resources
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.Properties.Resources.resources
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.csproj.GenerateResource.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.csproj.CoreCompileInputs.cache
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.csproj.CopyComplete
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.exe
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.pdb
+C:\Users\gaarag\Desktop\DAM\Ejercicios_Programación\Programación REPO\AEV7\AEV7\obj\Debug\AEV7.Contrasenya.resources

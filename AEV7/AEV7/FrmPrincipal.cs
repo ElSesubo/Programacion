@@ -14,13 +14,14 @@ namespace AEV7
     {
         ConexionBD bdatos = new ConexionBD();
         FrmAdministrador formAdmin;
-        FrmPermanencia formPerm;
+        FrmPermanencia formPer;
+        Contrasenya formContra;
 
         public FrmPrincipal()
         {
             InitializeComponent();
             formAdmin = new FrmAdministrador();
-            formPerm = new FrmPermanencia();
+            formPer = new FrmPermanencia();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,14 +46,21 @@ namespace AEV7
                     string fecha = DateTime.Now.ToString("yyyy/MM/dd");
                     Registro re = new Registro();
                     Empleado emp = new Empleado();
-                    
-                    if(emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text))
+                    if (emp.CheckNIF(txtNIF.Text))
                     {
-                        resultado = re.ficharEntrada(bdatos.Conexion, txtNIF.Text, fecha, hora);
-                        MessageBox.Show("Fichaje de entrada realizado");
+                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text))
+                        {
+                            resultado = re.ficharEntrada(bdatos.Conexion, txtNIF.Text, fecha, hora);
+                            MessageBox.Show("Fichaje de entrada realizado");
+                        }
+                        else
+                        {
+                            MessageBox.Show("El NIF es erroneo");
+                        }
                     }
-                    else {
-                        MessageBox.Show("El NIF es erroneo");
+                    else
+                    {
+                        MessageBox.Show("La letra del NIF es incorrecta");
                     }
                 }
                 else
@@ -134,7 +142,7 @@ namespace AEV7
 
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
-            formPerm.ShowDialog();
+            formPer.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

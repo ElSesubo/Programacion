@@ -82,5 +82,21 @@ namespace AEV7
             }
             return lista;
         }
+
+        static public List<Registro> permanencia(MySqlConnection conexion, string nif, DateTime inicio, DateTime fin)
+        {
+            List<Registro> fichajes = new List<Registro>();
+            string fechaIni = inicio.ToString("yyyyMMdd");
+            string fechaSal = fin.ToString("yyyyMMdd");
+            string consulta = String.Format("SELECT * FROM fichaje WHERE nif='{0}' AND (fecha BETWEEN {1} and {2}) AND finalizado=TRUE;", nif.ToUpper(), fechaIni, fechaSal);
+            MySqlCommand comando = new MySqlCommand(consulta, conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                fichajes.Add(new Registro(reader.GetInt32(0),reader.GetString(1),reader.GetString(2), reader.GetString(3), reader.GetString(4),reader.GetBoolean(5)));
+            }
+            reader.Close();
+            return fichajes;
+        }
     }
 }

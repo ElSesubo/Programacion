@@ -18,19 +18,22 @@ namespace AEV7
             InitializeComponent();
         }
 
-        private void FrmPermanencia_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnEnviar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            if (bdatos.AbrirConexion())
+            {
+                dtgvPermanencia.DataSource = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
+                bdatos.CerrarConexion();
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+            }
         }
     }
 }

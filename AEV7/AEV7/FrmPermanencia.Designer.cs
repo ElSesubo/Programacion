@@ -29,64 +29,87 @@ namespace AEV7
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpPrimeraFecha = new System.Windows.Forms.DateTimePicker();
-            this.dtpUltimaFecha = new System.Windows.Forms.DateTimePicker();
+            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtgvPermanencia = new System.Windows.Forms.DataGridView();
+            this.dtpFinal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnEnviar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtNIFPer = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPermanencia)).BeginInit();
             this.SuspendLayout();
             // 
-            // dtpPrimeraFecha
+            // dtpInicio
             // 
-            this.dtpPrimeraFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPrimeraFecha.Location = new System.Drawing.Point(134, 39);
-            this.dtpPrimeraFecha.Name = "dtpPrimeraFecha";
-            this.dtpPrimeraFecha.Size = new System.Drawing.Size(86, 20);
-            this.dtpPrimeraFecha.TabIndex = 0;
+            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicio.Location = new System.Drawing.Point(211, 376);
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(109, 20);
+            this.dtpInicio.TabIndex = 2;
             // 
-            // dtpUltimaFecha
+            // dtgvPermanencia
             // 
-            this.dtpUltimaFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpUltimaFecha.Location = new System.Drawing.Point(134, 84);
-            this.dtpUltimaFecha.Name = "dtpUltimaFecha";
-            this.dtpUltimaFecha.Size = new System.Drawing.Size(86, 20);
-            this.dtpUltimaFecha.TabIndex = 1;
+            this.dtgvPermanencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPermanencia.Location = new System.Drawing.Point(78, 162);
+            this.dtgvPermanencia.Name = "dtgvPermanencia";
+            this.dtgvPermanencia.Size = new System.Drawing.Size(625, 181);
+            this.dtgvPermanencia.TabIndex = 3;
+            // 
+            // dtpFinal
+            // 
+            this.dtpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFinal.Location = new System.Drawing.Point(390, 376);
+            this.dtpFinal.Name = "dtpFinal";
+            this.dtpFinal.Size = new System.Drawing.Size(109, 20);
+            this.dtpFinal.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 45);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 375);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Primera Fecha:";
+            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "INICIAL:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 90);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(328, 376);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Segunda Fecha:";
+            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "FINAL:";
             // 
-            // btnEnviar
+            // btnBuscar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(75, 132);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(119, 56);
-            this.btnEnviar.TabIndex = 4;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            this.btnBuscar.Location = new System.Drawing.Point(521, 364);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(106, 44);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtNIFPer
+            // 
+            this.txtNIFPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIFPer.Location = new System.Drawing.Point(117, 20);
+            this.txtNIFPer.Mask = "########?";
+            this.txtNIFPer.Name = "txtNIFPer";
+            this.txtNIFPer.Size = new System.Drawing.Size(526, 116);
+            this.txtNIFPer.TabIndex = 13;
+            this.txtNIFPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(75, 194);
+            this.btnCancelar.Location = new System.Drawing.Point(682, 415);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(119, 56);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -95,29 +118,31 @@ namespace AEV7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 273);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(769, 450);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.txtNIFPer);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtpUltimaFecha);
-            this.Controls.Add(this.dtpPrimeraFecha);
+            this.Controls.Add(this.dtpFinal);
+            this.Controls.Add(this.dtgvPermanencia);
+            this.Controls.Add(this.dtpInicio);
             this.Name = "FrmPermanencia";
             this.Text = "FrmPermanencia";
-            this.Load += new System.EventHandler(this.FrmPermanencia_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPermanencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtpPrimeraFecha;
-        private System.Windows.Forms.DateTimePicker dtpUltimaFecha;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.DataGridView dtgvPermanencia;
+        private System.Windows.Forms.DateTimePicker dtpFinal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.MaskedTextBox txtNIFPer;
         private System.Windows.Forms.Button btnCancelar;
     }
 }
