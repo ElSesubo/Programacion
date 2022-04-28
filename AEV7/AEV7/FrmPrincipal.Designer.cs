@@ -192,6 +192,7 @@ namespace AEV7
             this.Controls.Add(this.btnEntrada);
             this.Controls.Add(this.lblReloj);
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPresencia)).EndInit();

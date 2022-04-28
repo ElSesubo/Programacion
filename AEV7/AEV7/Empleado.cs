@@ -77,7 +77,7 @@ namespace AEV7
         {
             int retorno;
 
-            string consulta = string.Format("INSERT INTO empleado VALUES ('{0}','{1}','{2}','{3}','{4}')", emp.nif, emp.nombre, emp.apellido, emp.administrador, emp.password);
+            string consulta = string.Format("INSERT INTO empleado VALUES ('{0}','{1}','{2}','{3}','{4}')", emp.nif.ToUpper(), emp.nombre, emp.apellido, emp.administrador, emp.password);
 
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
             retorno = comando.ExecuteNonQuery();
@@ -131,6 +131,24 @@ namespace AEV7
             string[] control = { "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E" };
             var mod = dniNumbers % 23;
             return control[mod];
+        }
+
+        static public bool VerificarUsuario(MySqlConnection conexion, string usuario, string contrasenya)
+        {
+            bool valido = false;
+            string consulta = "SELECT nif,contraseña,administrador FROM empleado WHERE nif LIKE \"" + usuario + "\"";
+            MySqlCommand comando = new MySqlCommand(consulta, conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                if ((reader.GetString(0) == usuario && reader.GetString(1) == contrasenya) && (reader.GetBoolean(2) == true))
+                {
+                    valido = true;
+                }
+            }
+            reader.Close();
+            comando.ExecuteNonQuery();
+            return valido;
         }
     }
 }

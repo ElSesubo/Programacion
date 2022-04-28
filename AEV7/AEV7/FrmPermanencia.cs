@@ -27,8 +27,15 @@ namespace AEV7
         {
             if (bdatos.AbrirConexion())
             {
-                dtgvPermanencia.DataSource = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
-                bdatos.CerrarConexion();
+                if(dtpInicio.Value <= dtpFinal.Value)
+                {
+                    dtgvPermanencia.DataSource = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
+                    bdatos.CerrarConexion();
+                }
+                else
+                {
+                    MessageBox.Show("Las fechas no están bien comprendidas");
+                }
             }
             else
             {
