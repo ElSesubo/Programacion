@@ -16,6 +16,8 @@ namespace AEV7
         private TimeSpan fichajeSalida;
         private bool finalizado;
         private TimeSpan horasTotales;
+        private string nombre;
+        private string apellido;
 
         public int Id { get { return id; } set { id = value;} }
         public string Nif { get { return nif; } set { nif = value; } }
@@ -24,6 +26,8 @@ namespace AEV7
         public TimeSpan FichajeSalida { get { return fichajeSalida; } set { fichajeSalida = value; } }
         public TimeSpan HorasTotales { get { return horasTotales; } set { horasTotales = value; } }
         public bool Finalizado { get { return finalizado; } set { finalizado = value; } }
+        public string Nombre { get { return nombre; } set { nombre = value; } }
+        public string Apellido { get { return apellido; } set { apellido = value; } }
 
         /// <summary>
         /// Constructor de la clase Registro que guarda todos los datos excepto las horas totales realizadas
@@ -70,6 +74,13 @@ namespace AEV7
             this.id = id;
             nif = n;
             fecha = f;
+            fichajeEntrada = fEntrada;
+        }
+
+        public Registro(string n, string a, TimeSpan fEntrada)
+        {
+            nombre = n;
+            apellido = a;
             fichajeEntrada = fEntrada;
         }
 
@@ -138,7 +149,7 @@ namespace AEV7
             reader.Close();
             return fichajes;
         }
-
+       
         /// <summary>
         /// Selecciona la id, el nif, la fecha y el fichaje de entrada donde no este fichada la salida para posteriormente visualizarlos en un dataGridView
         /// </summary>
@@ -147,12 +158,12 @@ namespace AEV7
         public static List<Registro> presencia(MySqlConnection conexion)
         {
             List<Registro> fichajes = new List<Registro>();
-            string consulta = "SELECT id,nif,fecha,fichajeEntrada FROM fichaje WHERE finalizado=0;";
+            string consulta = "SELECT nombre,apellidos,fichajeEntrada FROM empleado INNER JOIN fichaje on empleado.nif=fichaje.nif WHERE finalizado=0;"; ;
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                fichajes.Add(new Registro(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetTimeSpan(3)));
+                fichajes.Add(new Registro(reader.GetString(0), reader.GetString(1), reader.GetTimeSpan(2)));
             }
             reader.Close();
             return fichajes;

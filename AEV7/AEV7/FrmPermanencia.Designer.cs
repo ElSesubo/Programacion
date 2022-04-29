@@ -31,6 +31,10 @@ namespace AEV7
         {
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtgvPermanencia = new System.Windows.Forms.DataGridView();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fichajeentrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichajeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horasTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,10 +43,6 @@ namespace AEV7
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblHoras = new System.Windows.Forms.Label();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fichajeentrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fichajeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horasTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPermanencia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,34 @@ namespace AEV7
             this.dtgvPermanencia.Size = new System.Drawing.Size(625, 181);
             this.dtgvPermanencia.TabIndex = 3;
             this.dtgvPermanencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPermanencia_CellContentClick);
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.Width = 150;
+            // 
+            // Fichajeentrada
+            // 
+            this.Fichajeentrada.HeaderText = "Fichaje Entrada";
+            this.Fichajeentrada.Name = "Fichajeentrada";
+            this.Fichajeentrada.ReadOnly = true;
+            this.Fichajeentrada.Width = 150;
+            // 
+            // fichajeSalida
+            // 
+            this.fichajeSalida.HeaderText = "Fichaje Salida";
+            this.fichajeSalida.Name = "fichajeSalida";
+            this.fichajeSalida.ReadOnly = true;
+            this.fichajeSalida.Width = 150;
+            // 
+            // horasTotales
+            // 
+            this.horasTotales.HeaderText = "Horas Totales";
+            this.horasTotales.Name = "horasTotales";
+            this.horasTotales.ReadOnly = true;
+            this.horasTotales.Width = 130;
             // 
             // dtpFinal
             // 
@@ -116,10 +144,11 @@ namespace AEV7
             this.txtNIFPer.Size = new System.Drawing.Size(526, 116);
             this.txtNIFPer.TabIndex = 13;
             this.txtNIFPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNIFPer.Click += new System.EventHandler(this.txtNIFPer_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(682, 415);
+            this.btnCancelar.Location = new System.Drawing.Point(727, 415);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 14;
@@ -130,7 +159,7 @@ namespace AEV7
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(667, 29);
+            this.label3.Location = new System.Drawing.Point(693, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 15;
@@ -139,41 +168,19 @@ namespace AEV7
             // lblHoras
             // 
             this.lblHoras.AutoSize = true;
-            this.lblHoras.Location = new System.Drawing.Point(679, 76);
+            this.lblHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoras.Location = new System.Drawing.Point(649, 51);
             this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(35, 13);
+            this.lblHoras.Size = new System.Drawing.Size(109, 39);
             this.lblHoras.TabIndex = 16;
             this.lblHoras.Text = "label4";
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.Width = 150;
-            // 
-            // Fichajeentrada
-            // 
-            this.Fichajeentrada.HeaderText = "Fichaje Entrada";
-            this.Fichajeentrada.Name = "Fichajeentrada";
-            this.Fichajeentrada.Width = 150;
-            // 
-            // fichajeSalida
-            // 
-            this.fichajeSalida.HeaderText = "Fichaje Salida";
-            this.fichajeSalida.Name = "fichajeSalida";
-            this.fichajeSalida.Width = 150;
-            // 
-            // horasTotales
-            // 
-            this.horasTotales.HeaderText = "Horas Totales";
-            this.horasTotales.Name = "horasTotales";
-            this.horasTotales.Width = 130;
+            this.lblHoras.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FrmPermanencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 450);
+            this.ClientSize = new System.Drawing.Size(814, 450);
             this.ControlBox = false;
             this.Controls.Add(this.lblHoras);
             this.Controls.Add(this.label3);
