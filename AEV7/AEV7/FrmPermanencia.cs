@@ -25,13 +25,13 @@ namespace AEV7
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (bdatos.AbrirConexion())
+            if (bdatos.AbrirConexion()) // Comprobamos que se abre la conexión
             {
                 lblHoras.Visible = false;
-                if(dtpInicio.Value <= dtpFinal.Value && dtpFinal.Value >= dtpInicio.Value)
+                if(dtpInicio.Value <= dtpFinal.Value && dtpFinal.Value >= dtpInicio.Value) // Comprobamos que los valores entre los dateTimePickers no se contradigan
                 {
                     lblHoras.Visible = true;
-                    List<Registro> lista = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
+                    List<Registro> lista = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value); // Utilizamos el metodo permanencia para cargar una lista
                     if (lista.Count == 0)
                     {
                         MessageBox.Show("No se ha encontrado ningún empleado");
@@ -39,7 +39,7 @@ namespace AEV7
                     else
                     {
                         dtgvPermanencia.Rows.Clear();
-                        for (int i = 0; i < lista.Count; i++)
+                        for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
                         {
                             dtgvPermanencia.Rows.Add(lista[i].Fecha.ToString("yyyy/MM/dd"),
                                lista[i].FichajeEntrada, lista[i].FichajeSalida, lista[i].HorasTotales);

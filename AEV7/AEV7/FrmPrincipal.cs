@@ -27,7 +27,7 @@ namespace AEV7
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true; // Inicializamos el reloj
-            dtgvPresencia.RowHeadersVisible = false;
+            dtgvPresencia.RowHeadersVisible = false; // Ocultamos las columnas de el datagridview
             dtgvPresencia.Columns[0].Visible = false;
             dtgvPresencia.Columns[1].Visible = false;
             dtgvPresencia.Columns[2].Visible = false;
@@ -44,17 +44,17 @@ namespace AEV7
         {
             try
             {
-                if (bdatos.AbrirConexion())
+                if (bdatos.AbrirConexion()) // Comprobamos la conexión
                 {
                     Registro re = new Registro();
                     Empleado emp = new Empleado();
-                    if (emp.CheckNIF(txtNIF.Text))
+                    if (emp.CheckNIF(txtNIF.Text)) // Comprobamos la letra del NIF
                     {
-                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper()))
+                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper())) // Comprobamos que el NIF exista
                         {
-                            if(re.VerificarFinalizado(bdatos.Conexion, txtNIF.Text) == false)
+                            if(re.VerificarFinalizado(bdatos.Conexion, txtNIF.Text) == false) // Comprobamos que el registro esté cerrado
                             {
-                                if (re.ficharEntrada(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1)
+                                if (re.ficharEntrada(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1) // realizamos el fichaje
                                 {
                                     MessageBox.Show("Fichaje de entrada realizado");
                                 }
@@ -93,21 +93,21 @@ namespace AEV7
         {
             try
             {
-                if (bdatos.AbrirConexion())
+                if (bdatos.AbrirConexion()) // Comprobamos la conexión
                 {
                     Registro re = new Registro();
                     Empleado emp = new Empleado();
-                    if (emp.CheckNIF(txtNIF.Text))
+                    if (emp.CheckNIF(txtNIF.Text)) // Comprobamos la letra del NIF
                     {
-                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper()))
+                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper())) // Comprobamos que el NIF exista
                         {
-                            if (re.ficharSalida(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1)
+                            if (re.ficharSalida(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1) // realizamos el fichaje
                             {
                                 MessageBox.Show("Fichaje de salida realizado");
                             }
                             else
                             {
-                                MessageBox.Show("No hay ningun fichaje abierto");
+                                MessageBox.Show("No hay ningun fichaje abierto"); // En caso de que no halla ningún fichaje abierto saltara un messageBox
                             }
                         }
                         else
@@ -156,22 +156,22 @@ namespace AEV7
         {
             if (bdatos.AbrirConexion())
             {
-                List<Registro> lista = Registro.presencia(bdatos.Conexion);
+                List<Registro> lista = Registro.presencia(bdatos.Conexion); // Utilizamos el método presencia para cargar la lista de registros
                 if (lista.Count == 0)
                 {
                     MessageBox.Show("No se ha encontrado ningún registro");
                 }
                 else
                 {
-                    dtgvPresencia.RowHeadersVisible = true;
+                    dtgvPresencia.RowHeadersVisible = true; // visualizamos las columnas de el datagridView
                     dtgvPresencia.Columns[0].Visible = true;
                     dtgvPresencia.Columns[1].Visible = true;
                     dtgvPresencia.Columns[2].Visible = true;
                     dtgvPresencia.Columns[3].Visible = true;
                     dtgvPresencia.Rows.Clear();
-                    for (int i = 0; i < lista.Count; i++)
+                    for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
                     {
-                        dtgvPresencia.Rows.Add(lista[i].Id,lista[i].Nif,lista[i].Fecha.ToString("yyyy/MM/dd"),lista[i].FichajeEntrada);
+                        dtgvPresencia.Rows.Add(lista[i].Id,lista[i].Nif,lista[i].Fecha.ToString("yyyy/MM/dd"),lista[i].FichajeEntrada); 
                     }
 
                 }
@@ -185,7 +185,7 @@ namespace AEV7
 
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
-            formPer.ShowDialog();
+            formPer.ShowDialog(); // Abrimos el formulario de la permanencia
         }
     }
 }
