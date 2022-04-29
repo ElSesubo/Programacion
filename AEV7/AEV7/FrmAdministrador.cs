@@ -20,20 +20,15 @@ namespace AEV7
 
         private void FrmAdministrador_Load(object sender, EventArgs e)
         {
-            CargaListaEmpleados();
+            CargaListaEmpleados(); // Cargamos las listas de los empleados y los fichajes en los datagridView
             CargaListaFichajes();
-            if (cbAdministrado.Checked == false)
-            {
-                txtContrasenya.Enabled = false;
-            }
         }
 
         private void CargaListaEmpleados()
         {
-            string seleccion = "Select * from empleado";
             if (bdatos.AbrirConexion())
             {
-                dtgvEmpleados.DataSource = Empleado.BuscarUsuario(bdatos.Conexion, seleccion);
+                dtgvEmpleados.DataSource = Empleado.buscarEmpleado(bdatos.Conexion);
                 bdatos.CerrarConexion();
             }
             else
@@ -43,10 +38,22 @@ namespace AEV7
         }
         private void CargaListaFichajes()
         {
-            string seleccion = "Select * from fichaje";
             if (bdatos.AbrirConexion())
             {
-                dtgvFichajes.DataSource = Registro.BuscarUsuario(bdatos.Conexion, seleccion);
+                List<Registro> lista = Registro.buscarRegistro(bdatos.Conexion);
+                if (lista.Count == 0)
+                {
+                    MessageBox.Show("No se ha encontrado ningún registro");
+                }
+                else
+                {
+                    dtgvFichajes.Rows.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        dtgvFichajes.Rows.Add(lista[i].Id, lista[i].Nif, lista[i].Fecha.ToString("yyyy/MM/dd"), lista[i].FichajeEntrada, lista[i].FichajeSalida, lista[i].Finalizado);
+                    }
+
+                }
                 bdatos.CerrarConexion();
             }
             else
@@ -126,6 +133,14 @@ namespace AEV7
                             }
                             else
                             {
+                                if (cbAdministrado.Checked == false)
+                                {
+                                    txtContrasenya.Enabled = false;
+                                }
+                                else
+                                {
+                                    txtContrasenya.Enabled = true;
+                                }
                                 resultado = Empleado.AgregarEmpleado(bdatos.Conexion, emp);
                                 MessageBox.Show("Se ha agregado el empleado exitosamente");
                             }
@@ -163,7 +178,6 @@ namespace AEV7
             txtNIF.Clear();
             txtNombre.Clear();
             txtApellidos.Clear();
-            cbAdministrado.Checked = false;
             txtContrasenya.Clear();
         }
 
@@ -205,7 +219,14 @@ namespace AEV7
 
         private void cbAdministrado_CheckedChanged(object sender, EventArgs e)
         {
-            txtContrasenya.Enabled = true;
+            if (cbAdministrado.Checked == false)
+            {
+                txtContrasenya.Enabled = false;
+            }
+            else
+            {
+                txtContrasenya.Enabled = true;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

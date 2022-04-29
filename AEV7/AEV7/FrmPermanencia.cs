@@ -25,12 +25,27 @@ namespace AEV7
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (bdatos.AbrirConexion())
+            if (bdatos.AbrirConexion()) // Comprobamos que se abre la conexión
             {
-                if(dtpInicio.Value <= dtpFinal.Value)
+                lblHoras.Visible = false;
+                if(dtpInicio.Value <= dtpFinal.Value && dtpFinal.Value >= dtpInicio.Value) // Comprobamos que los valores entre los dateTimePickers no se contradigan
                 {
-                    dtgvPermanencia.Columns.Clear();
-                    dtgvPermanencia.DataSource = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
+                    lblHoras.Visible = true;
+                    List<Registro> lista = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value); // Utilizamos el metodo permanencia para cargar una lista
+                    if (lista.Count == 0)
+                    {
+                        MessageBox.Show("No se ha encontrado ningún empleado");
+                    }
+                    else
+                    {
+                        dtgvPermanencia.Rows.Clear();
+                        for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
+                        {
+                            dtgvPermanencia.Rows.Add(lista[i].Fecha.ToString("yyyy/MM/dd"),
+                               lista[i].FichajeEntrada, lista[i].FichajeSalida, lista[i].HorasTotales);
+                        }
+
+                    }
                     bdatos.CerrarConexion();
                 }
                 else
@@ -42,6 +57,15 @@ namespace AEV7
             {
                 MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
             }
+        }
+
+        private void dtgvPermanencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void FrmPermanencia_Load(object sender, EventArgs e)
+        {
+            lblHoras.Visible = false;
         }
     }
 }

@@ -55,7 +55,7 @@ namespace AEV7
             // 
             // btnEntrarAdmin
             // 
-            this.btnEntrarAdmin.Location = new System.Drawing.Point(160, 131);
+            this.btnEntrarAdmin.Location = new System.Drawing.Point(160, 122);
             this.btnEntrarAdmin.Name = "btnEntrarAdmin";
             this.btnEntrarAdmin.Size = new System.Drawing.Size(82, 28);
             this.btnEntrarAdmin.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace AEV7
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(72, 131);
+            this.btnVolver.Location = new System.Drawing.Point(72, 122);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(82, 28);
             this.btnVolver.TabIndex = 5;
