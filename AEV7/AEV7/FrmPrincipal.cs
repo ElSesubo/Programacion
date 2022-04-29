@@ -152,31 +152,42 @@ namespace AEV7
 
         private void btnPresencia_Click(object sender, EventArgs e)
         {
-            if (bdatos.AbrirConexion())
+            try
             {
-                List<Registro> lista = Registro.presencia(bdatos.Conexion); // Utilizamos el método presencia para cargar la lista de registros
-                if (lista.Count == 0)
+                if (bdatos.AbrirConexion())
                 {
-                    MessageBox.Show("No se ha encontrado ningún registro");
+                    List<Registro> lista = Registro.presencia(bdatos.Conexion); // Utilizamos el método presencia para cargar la lista de registros
+                    if (lista.Count == 0)
+                    {
+                        MessageBox.Show("No se ha encontrado ningún registro");
+                    }
+                    else
+                    {
+                        dtgvPresencia.RowHeadersVisible = true; // visualizamos las columnas de el datagridView
+                        dtgvPresencia.Columns[0].Visible = true;
+                        dtgvPresencia.Columns[1].Visible = true;
+                        dtgvPresencia.Columns[2].Visible = true;
+                        dtgvPresencia.Rows.Clear();
+                        for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
+                        {
+                            dtgvPresencia.Rows.Add(lista[i].Nombre,lista[i].Apellido,lista[i].FichajeEntrada); 
+                        }
+
+                    }
+                    bdatos.CerrarConexion();
                 }
                 else
                 {
-                    dtgvPresencia.RowHeadersVisible = true; // visualizamos las columnas de el datagridView
-                    dtgvPresencia.Columns[0].Visible = true;
-                    dtgvPresencia.Columns[1].Visible = true;
-                    dtgvPresencia.Columns[2].Visible = true;
-                    dtgvPresencia.Rows.Clear();
-                    for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
-                    {
-                        dtgvPresencia.Rows.Add(lista[i].Nombre,lista[i].Apellido,lista[i].FichajeEntrada); 
-                    }
-
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                 }
-                bdatos.CerrarConexion();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                bdatos.CerrarConexion();
             }
         }
 
