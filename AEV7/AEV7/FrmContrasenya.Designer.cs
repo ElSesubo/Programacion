@@ -50,6 +50,7 @@ namespace AEV7
             // 
             this.txtContrasenya.Location = new System.Drawing.Point(126, 77);
             this.txtContrasenya.Name = "txtContrasenya";
+            this.txtContrasenya.PasswordChar = '*';
             this.txtContrasenya.Size = new System.Drawing.Size(157, 20);
             this.txtContrasenya.TabIndex = 1;
             // 

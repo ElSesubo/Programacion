@@ -31,7 +31,6 @@ namespace AEV7
             dtgvPresencia.Columns[0].Visible = false;
             dtgvPresencia.Columns[1].Visible = false;
             dtgvPresencia.Columns[2].Visible = false;
-            dtgvPresencia.Columns[3].Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -141,7 +140,6 @@ namespace AEV7
             dtgvPresencia.Columns[0].Visible = false;
             dtgvPresencia.Columns[1].Visible = false;
             dtgvPresencia.Columns[2].Visible = false;
-            dtgvPresencia.Columns[3].Visible = false;
             txtNIF.Text = "";
             dtgvPresencia.Columns.Clear();
             bdatos.CerrarConexion();
@@ -167,11 +165,10 @@ namespace AEV7
                     dtgvPresencia.Columns[0].Visible = true;
                     dtgvPresencia.Columns[1].Visible = true;
                     dtgvPresencia.Columns[2].Visible = true;
-                    dtgvPresencia.Columns[3].Visible = true;
                     dtgvPresencia.Rows.Clear();
                     for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
                     {
-                        dtgvPresencia.Rows.Add(lista[i].Id,lista[i].Nif,lista[i].Fecha.ToString("yyyy/MM/dd"),lista[i].FichajeEntrada); 
+                        dtgvPresencia.Rows.Add(lista[i].Nombre,lista[i].Apellido,lista[i].FichajeEntrada); 
                     }
 
                 }
@@ -186,6 +183,11 @@ namespace AEV7
         private void btnPermanencia_Click(object sender, EventArgs e)
         {
             formPer.ShowDialog(); // Abrimos el formulario de la permanencia
+        }
+
+        private void txtNIF_Click(object sender, EventArgs e)
+        {
+            txtNIF.Select(0,0);
         }
     }
 }

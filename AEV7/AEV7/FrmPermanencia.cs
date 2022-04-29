@@ -25,37 +25,51 @@ namespace AEV7
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (bdatos.AbrirConexion()) // Comprobamos que se abre la conexión
+            try
             {
-                lblHoras.Visible = false;
-                if(dtpInicio.Value <= dtpFinal.Value && dtpFinal.Value >= dtpInicio.Value) // Comprobamos que los valores entre los dateTimePickers no se contradigan
+                if (bdatos.AbrirConexion()) // Comprobamos que se abre la conexión
                 {
-                    lblHoras.Visible = true;
-                    List<Registro> lista = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value); // Utilizamos el metodo permanencia para cargar una lista
-                    if (lista.Count == 0)
+                    lblHoras.Visible = false;
+                    if (dtpInicio.Value <= dtpFinal.Value && dtpFinal.Value >= dtpInicio.Value) // Comprobamos que los valores entre los dateTimePickers no se contradigan
                     {
-                        MessageBox.Show("No se ha encontrado ningún empleado");
+                        lblHoras.Visible = true;
+                        List<Registro> lista = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value); // Utilizamos el metodo permanencia para cargar una lista
+                        if (lista.Count == 0)
+                        {
+                            MessageBox.Show("No se ha encontrado ningún empleado");
+                        }
+                        else
+                        {
+                            TimeSpan total = new TimeSpan(0, 0, 0);
+                            dtgvPermanencia.Rows.Clear();
+                            for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
+                            {
+                                dtgvPermanencia.Rows.Add(lista[i].Fecha.ToString("yyyy/MM/dd"),
+                                   lista[i].FichajeEntrada, lista[i].FichajeSalida, lista[i].HorasTotales);
+                                total += lista[i].HorasTotales;
+                            }
+                            lblHoras.Text = total.ToString();
+
+                        }
+                        bdatos.CerrarConexion();
                     }
                     else
                     {
-                        dtgvPermanencia.Rows.Clear();
-                        for (int i = 0; i < lista.Count; i++) // Cargamos fila a fila los datos que queremos que se visualizen en el datagrid
-                        {
-                            dtgvPermanencia.Rows.Add(lista[i].Fecha.ToString("yyyy/MM/dd"),
-                               lista[i].FichajeEntrada, lista[i].FichajeSalida, lista[i].HorasTotales);
-                        }
-
+                        MessageBox.Show("Las fechas no están bien comprendidas");
                     }
-                    bdatos.CerrarConexion();
                 }
                 else
                 {
-                    MessageBox.Show("Las fechas no están bien comprendidas");
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                bdatos.CerrarConexion();
             }
         }
 
@@ -66,6 +80,11 @@ namespace AEV7
         private void FrmPermanencia_Load(object sender, EventArgs e)
         {
             lblHoras.Visible = false;
+        }
+
+        private void txtNIFPer_Click(object sender, EventArgs e)
+        {
+            txtNIFPer.Select(0,0);
         }
     }
 }

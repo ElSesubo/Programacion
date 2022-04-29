@@ -32,6 +32,12 @@ namespace AEV7
             this.components = new System.ComponentModel.Container();
             this.dtgvEmpleados = new System.Windows.Forms.DataGridView();
             this.dtgvFichajes = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichajeEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichajeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Finalizado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbGestion = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -49,24 +55,12 @@ namespace AEV7
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fichajeEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fichajeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Finalizado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFichajes)).BeginInit();
             this.gbGestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +89,44 @@ namespace AEV7
             this.dtgvFichajes.ReadOnly = true;
             this.dtgvFichajes.Size = new System.Drawing.Size(543, 207);
             this.dtgvFichajes.TabIndex = 1;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nif
+            // 
+            this.nif.HeaderText = "NIF";
+            this.nif.Name = "nif";
+            this.nif.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // fichajeEntrada
+            // 
+            this.fichajeEntrada.HeaderText = "Fichaje Entrada";
+            this.fichajeEntrada.Name = "fichajeEntrada";
+            this.fichajeEntrada.ReadOnly = true;
+            // 
+            // fichajeSalida
+            // 
+            this.fichajeSalida.HeaderText = "Fichaje Salida";
+            this.fichajeSalida.Name = "fichajeSalida";
+            this.fichajeSalida.ReadOnly = true;
+            // 
+            // Finalizado
+            // 
+            this.Finalizado.HeaderText = "Finalizado";
+            this.Finalizado.Name = "Finalizado";
+            this.Finalizado.ReadOnly = true;
+            this.Finalizado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Finalizado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // gbGestion
             // 
@@ -261,18 +293,6 @@ namespace AEV7
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
-            // 
-            // errorProvider3
-            // 
-            this.errorProvider3.ContainerControl = this;
-            // 
-            // errorProvider4
-            // 
-            this.errorProvider4.ContainerControl = this;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -294,44 +314,6 @@ namespace AEV7
             this.label1.Size = new System.Drawing.Size(149, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "Cerrar Programa";
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // nif
-            // 
-            this.nif.HeaderText = "NIF";
-            this.nif.Name = "nif";
-            this.nif.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // fichajeEntrada
-            // 
-            this.fichajeEntrada.HeaderText = "Fichaje Entrada";
-            this.fichajeEntrada.Name = "fichajeEntrada";
-            this.fichajeEntrada.ReadOnly = true;
-            // 
-            // fichajeSalida
-            // 
-            this.fichajeSalida.HeaderText = "Fichaje Salida";
-            this.fichajeSalida.Name = "fichajeSalida";
-            this.fichajeSalida.ReadOnly = true;
-            // 
-            // Finalizado
-            // 
-            this.Finalizado.HeaderText = "Finalizado";
-            this.Finalizado.Name = "Finalizado";
-            this.Finalizado.ReadOnly = true;
-            this.Finalizado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Finalizado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FrmAdministrador
             // 
@@ -355,9 +337,6 @@ namespace AEV7
             this.gbGestion.ResumeLayout(false);
             this.gbGestion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -385,9 +364,6 @@ namespace AEV7
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
-        private System.Windows.Forms.ErrorProvider errorProvider3;
-        private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
