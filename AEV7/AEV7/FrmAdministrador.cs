@@ -30,10 +30,9 @@ namespace AEV7
 
         private void CargaListaEmpleados()
         {
-            string seleccion = "Select * from empleado";
             if (bdatos.AbrirConexion())
             {
-                dtgvEmpleados.DataSource = Empleado.BuscarUsuario(bdatos.Conexion, seleccion);
+                dtgvEmpleados.DataSource = Empleado.buscarEmpleado(bdatos.Conexion);
                 bdatos.CerrarConexion();
             }
             else
@@ -43,10 +42,22 @@ namespace AEV7
         }
         private void CargaListaFichajes()
         {
-            string seleccion = "Select * from fichaje";
             if (bdatos.AbrirConexion())
             {
-                dtgvFichajes.DataSource = Registro.BuscarUsuario(bdatos.Conexion, seleccion);
+                List<Registro> lista = Registro.buscarRegistro(bdatos.Conexion);
+                if (lista.Count == 0)
+                {
+                    MessageBox.Show("No se ha encontrado ningún registro");
+                }
+                else
+                {
+                    dtgvFichajes.Rows.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        dtgvFichajes.Rows.Add(lista[i].Id, lista[i].Nif, lista[i].Fecha.ToString("yyyy/MM/dd"), lista[i].FichajeEntrada, lista[i].FichajeSalida, lista[i].Finalizado);
+                    }
+
+                }
                 bdatos.CerrarConexion();
             }
             else

@@ -21,7 +21,14 @@ namespace AEV7
         public Boolean Administrador { get { return administrador; } set { administrador = value; } }
         public string Password { get { return password; } set { password = value; } }
 
-
+        /// <summary>
+        /// Constructor de la clase empleado
+        /// </summary>
+        /// <param name="n">nif del empleado</param>
+        /// <param name="nom">nombre del empleado</param>
+        /// <param name="ape">apellido del empleado</param>
+        /// <param name="admin">credencial de que el empleado es administrador o no</param>
+        /// <param name="pass">contraseña del empleado(solamente administradores)</param>
         public Empleado(string n, string nom, string ape, Boolean admin, string pass)
         {
             nif = n;
@@ -31,10 +38,20 @@ namespace AEV7
             password = pass;
         }
 
+        /// <summary>
+        /// Constructor vacío
+        /// </summary>
         public Empleado()
         {
 
         }
+
+        /// <summary>
+        /// Comprueba la existencia de un nif en la base de datos.
+        /// </summary>
+        /// <param name="conexion">Conexión con la base de datos</param>
+        /// <param name="nif">Nif del empleado</param>
+        /// <returns>true en caso de que exista, false en el contrario</returns>
         public bool ComprobarNIF(MySqlConnection conexion, string nif)
         {
             string consulta = string.Format("SELECT * FROM empleado" +
@@ -54,25 +71,31 @@ namespace AEV7
             }
         }
 
-        public static List<Empleado> BuscarUsuario(MySqlConnection conexion, string consulta)
+        /// <summary>
+        /// Selecciona todos los campos de la tabla empleado para posteriormente introducirlo en un dataGridView.
+        /// </summary>
+        /// <param name="conexion">Conexión con la base de datos</param>
+        /// <returns>Lista de Empleados</returns>
+        public static List<Empleado> buscarEmpleado(MySqlConnection conexion)
         {
-            List<Empleado> lista = new List<Empleado>();
-
+            List<Empleado> empleados = new List<Empleado>();
+            string consulta = "SELECT * FROM empleado";
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
             MySqlDataReader reader = comando.ExecuteReader();
-
-            if (reader.HasRows)   
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetBoolean(3), reader.GetString(4));
-                    lista.Add(user);
-                }
+                empleados.Add(new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetBoolean(3), reader.GetString(4)));
             }
-            return lista;
+            reader.Close();
+            return empleados;
         }
 
+        /// <summary>
+        /// Agrega un empleado a la tabla empleado
+        /// </summary>
+        /// <param name="conexion">Conexión con la base de datos</param>
+        /// <param name="emp">Objeto de clase empleado cargado</param>
+        /// <returns>1 o 0 para comprobar si el proceso se ha realizado exitosamente</returns>
         static public int AgregarEmpleado(MySqlConnection conexion, Empleado emp)
         {
             int retorno;
@@ -92,16 +115,12 @@ namespace AEV7
             return retorno;
         } 
 
-        public int ActualizarEmpleado(MySqlConnection conexion, Empleado emp)
-        {
-            int retorno;
-            string consulta = string.Format("UPDATE empleado SET nombre='{0}',apellido='{1}',administrador='{2}',contraseña='{3}' WHERE NIF='{4}'", emp.nombre, emp.apellido, emp.administrador, emp.password, emp.nif);
-
-            MySqlCommand comando = new MySqlCommand(consulta, conexion);
-            retorno = comando.ExecuteNonQuery();
-            return retorno;
-        }
-
+        /// <summary>
+        /// Elimina un empleado de la tabla empleado
+        /// </summary>
+        /// <param name="conexion">Conexión con la base de datos</param>
+        /// <param name="nif">string referente al nif del empleado</param>
+        /// <returns>1 o 0 para comprobar si el proceso se ha realizado exitosamente</returns>
         public static int EliminaEmpleado(MySqlConnection conexion, string nif)
         {
             int retorno;
@@ -112,6 +131,11 @@ namespace AEV7
             return retorno;
         }
 
+        /// <summary>
+        /// Comprueba si la letra del NIF es correcta
+        /// </summary>
+        /// <param name="dni">string referente a el nif del empleado</param>
+        /// <returns>true en caso de que sea correcta y false en el caso contrario</returns>
         public bool CheckNIF(string dni)
         {
             if (dni.Length != 9)
@@ -134,6 +158,11 @@ namespace AEV7
             return true;
         }
 
+        /// <summary>
+        /// Calcula la letra del nif basandose en los números del nif
+        /// </summary>
+        /// <param name="dniNumbers">numeros del nif</param>
+        /// <returns>string con la letra correspondiente</returns>
         public string CalculateNIF(int dniNumbers)
         {
             string[] control = { "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E" };
@@ -141,6 +170,13 @@ namespace AEV7
             return control[mod];
         }
 
+        /// <summary>
+        /// Verifica que el empleado sea administrador
+        /// </summary>
+        /// <param name="conexion">Conexión con la base de datos</param>
+        /// <param name="usuario">nif del empleado</param>
+        /// <param name="contrasenya">contraseña del empleado</param>
+        /// <returns>True en caso de que el usuario sea administrador y la contraseña sea valida y false en el caso contrario</returns>
         static public bool VerificarUsuario(MySqlConnection conexion, string usuario, string contrasenya)
         {
             bool valido = false;

@@ -37,6 +37,7 @@ namespace AEV7
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblContrasenya = new System.Windows.Forms.Label();
             this.txtContrasenya = new System.Windows.Forms.TextBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.cbAdministrado = new System.Windows.Forms.CheckBox();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@ namespace AEV7
             this.lblNIF = new System.Windows.Forms.Label();
             this.txtNIF = new System.Windows.Forms.TextBox();
             this.lblGestion = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -54,6 +54,12 @@ namespace AEV7
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichajeEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichajeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Finalizado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFichajes)).BeginInit();
             this.gbGestion.SuspendLayout();
@@ -77,6 +83,13 @@ namespace AEV7
             // dtgvFichajes
             // 
             this.dtgvFichajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvFichajes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nif,
+            this.Fecha,
+            this.fichajeEntrada,
+            this.fichajeSalida,
+            this.Finalizado});
             this.dtgvFichajes.Location = new System.Drawing.Point(27, 272);
             this.dtgvFichajes.Name = "dtgvFichajes";
             this.dtgvFichajes.ReadOnly = true;
@@ -140,6 +153,16 @@ namespace AEV7
             this.txtContrasenya.Name = "txtContrasenya";
             this.txtContrasenya.Size = new System.Drawing.Size(158, 20);
             this.txtContrasenya.TabIndex = 8;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(103, 287);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 12;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // cbAdministrado
             // 
@@ -212,16 +235,6 @@ namespace AEV7
             this.lblGestion.TabIndex = 0;
             this.lblGestion.Text = "Gestion de EMPLEADOS";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(103, 287);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 12;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // lblEmpleado
             // 
             this.lblEmpleado.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
@@ -282,6 +295,44 @@ namespace AEV7
             this.label1.TabIndex = 15;
             this.label1.Text = "Cerrar Programa";
             // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nif
+            // 
+            this.nif.HeaderText = "NIF";
+            this.nif.Name = "nif";
+            this.nif.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // fichajeEntrada
+            // 
+            this.fichajeEntrada.HeaderText = "Fichaje Entrada";
+            this.fichajeEntrada.Name = "fichajeEntrada";
+            this.fichajeEntrada.ReadOnly = true;
+            // 
+            // fichajeSalida
+            // 
+            this.fichajeSalida.HeaderText = "Fichaje Salida";
+            this.fichajeSalida.Name = "fichajeSalida";
+            this.fichajeSalida.ReadOnly = true;
+            // 
+            // Finalizado
+            // 
+            this.Finalizado.HeaderText = "Finalizado";
+            this.Finalizado.Name = "Finalizado";
+            this.Finalizado.ReadOnly = true;
+            this.Finalizado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Finalizado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FrmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,5 +390,11 @@ namespace AEV7
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fichajeEntrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fichajeSalida;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Finalizado;
     }
 }

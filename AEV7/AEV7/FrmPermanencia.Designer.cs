@@ -37,6 +37,12 @@ namespace AEV7
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNIFPer = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblHoras = new System.Windows.Forms.Label();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fichajeentrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichajeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horasTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPermanencia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,10 +57,17 @@ namespace AEV7
             // dtgvPermanencia
             // 
             this.dtgvPermanencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPermanencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fecha,
+            this.Fichajeentrada,
+            this.fichajeSalida,
+            this.horasTotales});
             this.dtgvPermanencia.Location = new System.Drawing.Point(78, 162);
             this.dtgvPermanencia.Name = "dtgvPermanencia";
+            this.dtgvPermanencia.ReadOnly = true;
             this.dtgvPermanencia.Size = new System.Drawing.Size(625, 181);
             this.dtgvPermanencia.TabIndex = 3;
+            this.dtgvPermanencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPermanencia_CellContentClick);
             // 
             // dtpFinal
             // 
@@ -114,11 +127,56 @@ namespace AEV7
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(667, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Horas Totales:";
+            // 
+            // lblHoras
+            // 
+            this.lblHoras.AutoSize = true;
+            this.lblHoras.Location = new System.Drawing.Point(679, 76);
+            this.lblHoras.Name = "lblHoras";
+            this.lblHoras.Size = new System.Drawing.Size(35, 13);
+            this.lblHoras.TabIndex = 16;
+            this.lblHoras.Text = "label4";
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.Width = 150;
+            // 
+            // Fichajeentrada
+            // 
+            this.Fichajeentrada.HeaderText = "Fichaje Entrada";
+            this.Fichajeentrada.Name = "Fichajeentrada";
+            this.Fichajeentrada.Width = 150;
+            // 
+            // fichajeSalida
+            // 
+            this.fichajeSalida.HeaderText = "Fichaje Salida";
+            this.fichajeSalida.Name = "fichajeSalida";
+            this.fichajeSalida.Width = 150;
+            // 
+            // horasTotales
+            // 
+            this.horasTotales.HeaderText = "Horas Totales";
+            this.horasTotales.Name = "horasTotales";
+            this.horasTotales.Width = 130;
+            // 
             // FrmPermanencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblHoras);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtNIFPer);
             this.Controls.Add(this.btnBuscar);
@@ -130,6 +188,7 @@ namespace AEV7
             this.Name = "FrmPermanencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPermanencia";
+            this.Load += new System.EventHandler(this.FrmPermanencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPermanencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,5 +204,11 @@ namespace AEV7
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.MaskedTextBox txtNIFPer;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblHoras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fichajeentrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fichajeSalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horasTotales;
     }
 }

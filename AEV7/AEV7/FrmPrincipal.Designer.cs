@@ -41,6 +41,10 @@ namespace AEV7
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtgvPresencia = new System.Windows.Forms.DataGridView();
             this.txtNIF = new System.Windows.Forms.MaskedTextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichajeEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPresencia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,8 +148,14 @@ namespace AEV7
             // dtgvPresencia
             // 
             this.dtgvPresencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPresencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nif,
+            this.fecha,
+            this.fichajeEntrada});
             this.dtgvPresencia.Location = new System.Drawing.Point(39, 155);
             this.dtgvPresencia.Name = "dtgvPresencia";
+            this.dtgvPresencia.ReadOnly = true;
             this.dtgvPresencia.Size = new System.Drawing.Size(526, 264);
             this.dtgvPresencia.TabIndex = 10;
             // 
@@ -158,6 +168,30 @@ namespace AEV7
             this.txtNIF.Size = new System.Drawing.Size(526, 116);
             this.txtNIF.TabIndex = 12;
             this.txtNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.Width = 120;
+            // 
+            // nif
+            // 
+            this.nif.HeaderText = "NIF";
+            this.nif.Name = "nif";
+            this.nif.Width = 120;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.Width = 120;
+            // 
+            // fichajeEntrada
+            // 
+            this.fichajeEntrada.HeaderText = "Fichaje Entrada";
+            this.fichajeEntrada.Name = "fichajeEntrada";
+            this.fichajeEntrada.Width = 120;
             // 
             // FrmPrincipal
             // 
@@ -198,6 +232,10 @@ namespace AEV7
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DataGridView dtgvPresencia;
         private System.Windows.Forms.MaskedTextBox txtNIF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fichajeEntrada;
     }
 }
 

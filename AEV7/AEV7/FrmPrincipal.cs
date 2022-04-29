@@ -20,18 +20,23 @@ namespace AEV7
         public FrmPrincipal()
         {
             InitializeComponent();
-            formContra = new FrmContrasenya();
+            formContra = new FrmContrasenya(); // Creamos dos formularios
             formPer = new FrmPermanencia();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            timer1.Enabled = true; // Inicializamos el reloj
+            dtgvPresencia.RowHeadersVisible = false;
+            dtgvPresencia.Columns[0].Visible = false;
+            dtgvPresencia.Columns[1].Visible = false;
+            dtgvPresencia.Columns[2].Visible = false;
+            dtgvPresencia.Columns[3].Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblReloj.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblReloj.Text = DateTime.Now.ToString("HH:mm:ss"); 
             lblFecha.Text = DateTime.Now.ToString("d");
         }
 
@@ -47,9 +52,16 @@ namespace AEV7
                     {
                         if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper()))
                         {
-                            if(re.ficharEntrada(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1)
+                            if(re.VerificarFinalizado(bdatos.Conexion, txtNIF.Text) == false)
                             {
-                                MessageBox.Show("Fichaje de entrada realizado");
+                                if (re.ficharEntrada(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1)
+                                {
+                                    MessageBox.Show("Fichaje de entrada realizado");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya hay un registro de entrada abierto");
                             }
                         }
                         else
@@ -85,23 +97,34 @@ namespace AEV7
                 {
                     Registro re = new Registro();
                     Empleado emp = new Empleado();
-                    if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper()))
+                    if (emp.CheckNIF(txtNIF.Text))
                     {
-                        if(re.ficharSalida(bdatos.Conexion,txtNIF.Text.ToUpper()) == 1)
+                        if (emp.ComprobarNIF(bdatos.Conexion, txtNIF.Text.ToUpper()))
                         {
-                            MessageBox.Show("Fichaje de salida realizado");
+                            if (re.ficharSalida(bdatos.Conexion, txtNIF.Text.ToUpper()) == 1)
+                            {
+                                MessageBox.Show("Fichaje de salida realizado");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No hay ningun fichaje abierto");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El NIF es erroneo");
+                        }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La letra del NIF es incorrecta");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("El NIF es erroneo");
+                        MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
-                }
-            }
+                } 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
@@ -114,6 +137,11 @@ namespace AEV7
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            dtgvPresencia.RowHeadersVisible = false;
+            dtgvPresencia.Columns[0].Visible = false;
+            dtgvPresencia.Columns[1].Visible = false;
+            dtgvPresencia.Columns[2].Visible = false;
+            dtgvPresencia.Columns[3].Visible = false;
             txtNIF.Text = "";
             dtgvPresencia.Columns.Clear();
             bdatos.CerrarConexion();
@@ -126,10 +154,27 @@ namespace AEV7
 
         private void btnPresencia_Click(object sender, EventArgs e)
         {
-            string consulta = "SELECT * FROM fichaje WHERE finalizado=0";
             if (bdatos.AbrirConexion())
             {
-                dtgvPresencia.DataSource = Registro.BuscarUsuario(bdatos.Conexion, consulta);
+                List<Registro> lista = Registro.presencia(bdatos.Conexion);
+                if (lista.Count == 0)
+                {
+                    MessageBox.Show("No se ha encontrado ningún registro");
+                }
+                else
+                {
+                    dtgvPresencia.RowHeadersVisible = true;
+                    dtgvPresencia.Columns[0].Visible = true;
+                    dtgvPresencia.Columns[1].Visible = true;
+                    dtgvPresencia.Columns[2].Visible = true;
+                    dtgvPresencia.Columns[3].Visible = true;
+                    dtgvPresencia.Rows.Clear();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        dtgvPresencia.Rows.Add(lista[i].Id,lista[i].Nif,lista[i].Fecha.ToString("yyyy/MM/dd"),lista[i].FichajeEntrada);
+                    }
+
+                }
                 bdatos.CerrarConexion();
             }
             else

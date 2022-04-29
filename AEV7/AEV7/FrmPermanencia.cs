@@ -27,10 +27,25 @@ namespace AEV7
         {
             if (bdatos.AbrirConexion())
             {
-                if(dtpInicio.Value <= dtpFinal.Value)
+                lblHoras.Visible = false;
+                if(dtpInicio.Value <= dtpFinal.Value && dtpFinal.Value >= dtpInicio.Value)
                 {
-                    dtgvPermanencia.Columns.Clear();
-                    dtgvPermanencia.DataSource = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
+                    lblHoras.Visible = true;
+                    List<Registro> lista = Registro.permanencia(bdatos.Conexion, txtNIFPer.Text, dtpInicio.Value, dtpFinal.Value);
+                    if (lista.Count == 0)
+                    {
+                        MessageBox.Show("No se ha encontrado ningún empleado");
+                    }
+                    else
+                    {
+                        dtgvPermanencia.Rows.Clear();
+                        for (int i = 0; i < lista.Count; i++)
+                        {
+                            dtgvPermanencia.Rows.Add(lista[i].Fecha.ToString("yyyy/MM/dd"),
+                               lista[i].FichajeEntrada, lista[i].FichajeSalida, lista[i].HorasTotales);
+                        }
+
+                    }
                     bdatos.CerrarConexion();
                 }
                 else
@@ -42,6 +57,15 @@ namespace AEV7
             {
                 MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
             }
+        }
+
+        private void dtgvPermanencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void FrmPermanencia_Load(object sender, EventArgs e)
+        {
+            lblHoras.Visible = false;
         }
     }
 }
