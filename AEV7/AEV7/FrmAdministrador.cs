@@ -96,6 +96,16 @@ namespace AEV7
                 errorProvider1.Clear();
             }
 
+            if(cbAdministrado.Checked && txtContrasenya.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtContrasenya, "Campo obligatorio como administrador");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
             return ok;
         }
 

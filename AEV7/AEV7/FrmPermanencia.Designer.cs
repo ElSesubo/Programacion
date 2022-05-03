@@ -171,9 +171,8 @@ namespace AEV7
             this.lblHoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoras.Location = new System.Drawing.Point(649, 51);
             this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(109, 39);
+            this.lblHoras.Size = new System.Drawing.Size(0, 39);
             this.lblHoras.TabIndex = 16;
-            this.lblHoras.Text = "label4";
             this.lblHoras.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FrmPermanencia

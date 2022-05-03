@@ -158,7 +158,7 @@ namespace AEV7
         public static List<Registro> presencia(MySqlConnection conexion)
         {
             List<Registro> fichajes = new List<Registro>();
-            string consulta = "SELECT nombre,apellidos,fichajeEntrada FROM empleado INNER JOIN fichaje on empleado.nif=fichaje.nif WHERE finalizado=0;"; ;
+            string consulta = "SELECT nombre,apellido,fichajeEntrada FROM empleado INNER JOIN fichaje on empleado.nif=fichaje.nif WHERE finalizado=0;"; ;
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())

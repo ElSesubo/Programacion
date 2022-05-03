@@ -20,6 +20,9 @@ namespace AEV7
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            dtgvPermanencia.Rows.Clear();
+            lblHoras.Text = "";
+            txtNIFPer.Text = "";
             this.Close();
         }
 
@@ -37,6 +40,8 @@ namespace AEV7
                         if (lista.Count == 0)
                         {
                             MessageBox.Show("No se ha encontrado ningún empleado");
+                            lblHoras.Text = "";
+                            lblHoras.Visible = false;
                         }
                         else
                         {
