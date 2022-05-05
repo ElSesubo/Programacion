@@ -141,7 +141,6 @@ namespace AEV7
             dtgvPresencia.Columns[1].Visible = false;
             dtgvPresencia.Columns[2].Visible = false;
             txtNIF.Text = "";
-            dtgvPresencia.Columns.Clear();
             bdatos.CerrarConexion();
         }
 
